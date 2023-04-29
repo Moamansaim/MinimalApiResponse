@@ -37,6 +37,8 @@ app.MapPost("/api/Posts", ([FromBody] Post newPost) =>
     return Results.Created("Posts", newPost.Id);
 });
 
+//delete item
+
 app.MapDelete("/api/Posts/{id}", ([FromRoute] int id) =>
 {
     var post = Data.Posts.FirstOrDefault(p => p.Id == id);
